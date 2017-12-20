@@ -1,0 +1,17 @@
+body {
+	background: url('http://csssecrets.io/images/stone-art.jpg');
+}
+div {
+	border: 10px dashed hsla(0,0%,100%,.5);
+	background: white;
+	/* 默认情况下背景会延伸到边框所在的区域下层。解决方案就是通过 background-clip 属性来调整。
+	   background-clip 属性初始值是 border-box，意味着背景会被元素的 border box（边框的外沿框）裁切掉。
+	   设置为 padding-box 的话，浏览器就会用内边距的外沿来把背景裁切掉。 */
+	background-clip: padding-box;
+
+	/* styling */
+	max-width: 20em;
+	padding: 2em;
+	margin: 2em auto 0;
+	font: 100%/1.5 sans-serif;
+}
