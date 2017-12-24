@@ -1,0 +1,72 @@
+div {
+	margin-bottom: 20px;
+}
+
+/**
+ * background-position 实现灵活的背景定位 
+ */
+ div.background-position {
+	background: url(http://csssecrets.io/images/code-pirate.svg)
+	/* 回退方案，为不支持 background-position 扩展语法的浏览器提供 */
+				no-repeat bottom right #58a;
+
+	/**
+	 * background-position 允许我们指定背景图片距离任意角的偏移量，只要再偏移量前面指定关键字，
+	 * 以下的含义就是距离右边 20px，距离底部 10px。
+	 * 默认情况下，background-position 是以 padding box 为准，这样边框才不会遮住背景图片。
+	 * 因此 background-position 的 top left 默认指的是 padding box 的左上角 
+	 */
+	background-position: right 20px bottom 10px;
+	
+	/* Styling */
+	max-width: 10em;
+	min-height: 5em;
+	padding: 10px;
+	color: white;
+	font: 100%/1 sans-serif;
+}
+
+/**
+ * background-origin 实现偏移量与容器内边距一致时背景定位 
+ */
+div.background-origin {
+	background: url(http://csssecrets.io/images/code-pirate.svg)
+	/* 回退方案，为不支持 background-position 扩展语法的浏览器提供 */
+				no-repeat bottom right #58a;
+
+	/**
+	  * background-origin 默认情况下是 padding-box, 改为 content-box 则
+	  * background-position 中使用的边角关键字会以内容区的边缘作为基准（也就是说
+	  * 此时背景图片距离边角的偏移量就更内边距保持一致了）
+	  */
+	background-origin: content-box;
+	
+	/* Styling */
+	max-width: 10em;
+	min-height: 5em;
+	padding: 10px;
+	color: white;
+	font: 100%/1 sans-serif;
+}
+
+/**
+ * calc() 实现灵活的背景定位 
+ */
+div.calc {
+	background: url(http://csssecrets.io/images/code-pirate.svg)
+	/* 回退方案，为不支持 background-position 扩展语法的浏览器提供 */
+				no-repeat bottom right #58a;
+
+	/**
+	 * 目的把背景图片定位到距离底边 10px,距离右边 20px 的距离，
+	 * 那就是水平有一个 100%-20px 的水平偏移量，以及 100%-10px 的垂直偏移量
+	 */
+	background-position: calc(100% - 20px) calc(100% - 10px);
+	
+	/* Styling */
+	max-width: 10em;
+	min-height: 5em;
+	padding: 10px;
+	color: white;
+	font: 100%/1 sans-serif;
+}

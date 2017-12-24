@@ -4,11 +4,13 @@ div.box-shadow {
 	height: 60px;
 	margin: 25px;
 	background: yellowgreen;
-	/* box-shadow 支持逗号分隔，可以创建任意数量的投影。
-	   box-shadow 是层层叠加的，由内而外扩张，半径因此要累积计算，第一层如果是 10px，希望第二层有 5px 宽，则要设置为 15px（10px + 5px）。
-	   box-shadow 的投影行为跟边框不完全一致，它不会影响布局，而且不会受到 box-sizing 属性的影响。可以通过内边距或外边距来额外模拟出边框所需要占据的空间。
-	   使用 box-shadow 创建的边框如果出现在元素的外圈，则不会响应鼠标事件。可以给 box-shadow 属性加上 inset 关键字，来使投影绘制在元素的内圈，
-	   此时要注意加上额外的内边距来腾出足够的空隙。 */
+	/**
+	 * box-shadow 支持逗号分隔，可以创建任意数量的投影。
+	 * box-shadow 是层层叠加的，由内而外扩张，半径因此要累积计算，第一层如果是 10px，希望第二层有 5px 宽，则要设置为 15px（10px + 5px）。
+	 * box-shadow 的投影行为跟边框不完全一致，它不会影响布局，而且不会受到 box-sizing 属性的影响。可以通过内边距或外边距来额外模拟出边框所需要占据的空间。
+	 * 使用 box-shadow 创建的边框如果出现在元素的外圈，则不会响应鼠标事件。可以给 box-shadow 属性加上 inset 关键字，来使投影绘制在元素的内圈，
+	 * 此时要注意加上额外的内边距来腾出足够的空隙。
+	 */
 	box-shadow: 0 0 0 10px #655,
 				0 0 0 15px deeppink;
 }
@@ -20,9 +22,10 @@ div.outline {
 	margin: 80px 25px;
 	background: yellowgreen;
 	/* outline 只能实现两层边框，一层是 border 的，再一层就是 outline 的。
-	   outline 可以通过 outline-offset 实现它跟元素边缘之间的距离，这里就是到 border 的距离。
-	   outline-offset 接受负值，可以向着元素中心移动。
-	   如果元素有 border-radius 属性产生的圆角，outline 生成的边框不会贴合圆角。 */
+	 * outline 可以通过 outline-offset 实现它跟元素边缘之间的距离，这里就是到 border 的距离。
+	 * outline-offset 接受负值，可以向着元素中心移动。
+	 * 如果元素有 border-radius 属性产生的圆角，outline 生成的边框不会贴合圆角。 
+	 */
 	border: 10px solid #655;
 	outline: 5px solid deeppink;
 	/* outline-offset: -8px; */
