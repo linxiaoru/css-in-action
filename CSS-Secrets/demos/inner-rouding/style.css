@@ -1,0 +1,22 @@
+/**
+ * 边框内圆角，常规解决方案是两个元素，里面元素使用 border-radius 形成圆角。以下的解决方案是只用一个元素时的方案。
+ */
+
+ div {
+	 /* 描边不会跟着元素的圆角走，所以 outline 显示出的是直角 */
+	outline: .6em solid #777;
+	/** 
+	 * box-shadow 会跟着元素的圆角走，所以跟 outline 二者一起叠加起来的话刚好能显示一个内圆角。
+	 * box-shadow 的扩张值不易i的那个等于描边的宽度，需要指定一个足够填补空隙的宽度就好，且不要大等于描边宽度，会引起部分浏览器渲染异常。
+	 * 这个足够填补的空隙宽度根据勾股定理计算，当 border-radius 的宽设为 r 时，描边的宽度的最小值是（√2 -1）r。所以，选择范围 x 是：（√2 -1）r < x < r。
+	 * box-shadow 颜色与描边一致时，就能显示出内圆角了，这里为了看出差别，选择了别的颜色。
+	 */
+	box-shadow: 0 0 0 .4em #655; /* todo calculate max of this */
+	
+	max-width: 10em;
+	border-radius: .8em;
+	padding: 1em;
+	margin: 1em;
+	background: tan;
+	font: 100%/1.5 sans-serif;
+}
