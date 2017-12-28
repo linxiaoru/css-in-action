@@ -1,0 +1,21 @@
+div {
+	margin: 20px;
+	width: 20em;
+	height: 15em;
+}
+
+div.horitontal-stripes
+ {
+	 /**
+	  * 如果多个色标具有相同的位置，它们会产生一个无限小的过度区域，过度的起止色分别是第一个和最后一个指定值。
+	  * 如果把第二个色标的值设置为 0，那它的位置总时会被浏览器调整为前一个色标的位置值。 */
+	background: linear-gradient(#fb3 20%, #58a 80%);
+	background-size: 100% 30px;
+}
+
+div.vertical-stripes{
+	/**
+	 * liner-gradient 方向默认值是 to bottom 就是从上往下渐变，to right 则是从左往右渐变，也可以是角度值 90deg  */
+	background: linear-gradient(to right, #fb3 50%, #58a 0);
+	background-size: 30px 100%;
+}
