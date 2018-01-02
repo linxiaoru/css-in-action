@@ -1,0 +1,22 @@
+div {
+	margin: 20px 0;
+	width: 150px;
+	height: 150px;
+}
+div.red-table-rows {
+	background: white;
+	background-image: linear-gradient(rgba(200, 0, 0, .5) 50%, transparent 0);
+	background-size: 30px 30px;
+}
+div.red-table-columns {
+	background: white;
+	background-image: linear-gradient(90deg, rgba(200, 0, 0, .5) 50%, transparent 0);
+	background-size: 30px 30px;
+}
+/* 垂直方向的条纹叠加上水平方向的条纹，就变成方格条纹了 */
+div.red-table {
+	background: white;
+	background-image: linear-gradient(90deg, rgba(200, 0, 0, .5) 50%, transparent 0),
+					  linear-gradient(rgba(200, 0, 0, .5) 50%, transparent 0);
+	background-size: 30px 30px;
+}
