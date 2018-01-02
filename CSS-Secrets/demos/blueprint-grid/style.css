@@ -1,0 +1,37 @@
+div {
+	margin: 20px 0;
+	width: 150px;
+	height: 150px;
+}
+div.blueprint-grid-rows {
+	background: #58a;
+	background-image: 
+		linear-gradient(white 1px, transparent 0);
+	background-size: 30px 30px;
+}
+div.blueprint-grid-columns {
+	background: #58a;
+	background-image: 
+		linear-gradient(90deg, white 1px, transparent 0);
+	background-size: 30px 30px;
+}
+/* 横条加竖条变成网格 */
+div.blueprint-grid {
+	background: #58a;
+	background-image: 
+		linear-gradient(white 1px, transparent 0),
+		linear-gradient(90deg, white 1px, transparent 0);
+	background-size: 30px 30px;
+}
+
+/* 将不同线宽，不同色的网格再叠加，得到更加密集网格图案 */
+div.concentrated-blueprint-grid {
+	background: #58a;
+	background-image: 
+		linear-gradient(white 2px, transparent 0),
+		linear-gradient(90deg, white 2px, transparent 0),
+		linear-gradient(hsla(0, 0%, 100%,.3) 1px, transparent 0),
+		linear-gradient(90deg, hsla(0, 0%, 100%,.3) 1px, transparent 0);
+	background-size: 50px 50px, 50px 50px,
+					 10px 10px, 10px 10px;
+}
