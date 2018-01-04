@@ -1,0 +1,22 @@
+div {
+	margin: 20px 0;
+	width: 150px;
+	height: 150px;
+}
+div.Polka-dot {
+	background: #655;
+	background-image: radial-gradient(tan 30%, transparent 0);
+	background-size: 30px 30px;
+}
+/**
+ * 生成两层圆点阵列图案，并用背景定位来错开，得到密集的波点图案。
+ * 第二层背景的偏移定位值必须是贴片宽高的一半。
+ */
+div.concentrated-Polka-dot {
+	background: #655;
+	background-image:
+		radial-gradient(tan 30%, transparent 0),
+		radial-gradient(tan 30%, transparent 0);
+	background-size: 30px 30px;
+	background-position: 0 0, 15px 15px;
+}
