@@ -3,6 +3,54 @@ div {
 	width: 150px;
 	height: 150px;
 }
+
+/* 利用渐变生成直角三角形 */
+div.checkerboard-step1 {
+	background: #eee;
+	background-image:
+		linear-gradient(45deg,  #bbb 25%, transparent 0);
+	background-size: 30px 30px;
+}
+
+/* 将色标顺序反转，创建相反方向的三角形 */
+div.checkerboard-step2 {
+	background: #eee;
+	background-image:
+		linear-gradient(45deg, transparent 75%, #bbb 0);
+	background-size: 30px 30px;
+}
+
+/* 将两个方向的三角形进行重叠组合 */
+div.checkerboard-step3 {
+	background: #eee;
+	background-image:
+		linear-gradient(45deg,  #bbb 25%, transparent 0),
+		linear-gradient(45deg, transparent 75%, #bbb 0);
+	background-size: 30px 30px;
+}
+
+/* 把第二层三角形再水平和垂直方向上均移动贴片长度的一半,得到棋盘的一半 */
+div.checkerboard-step4 {
+	background: #eee;
+	background-image:
+		linear-gradient(45deg,  #bbb 25%, transparent 0),
+		linear-gradient(45deg, transparent 75%, #bbb 0);
+	background-size: 30px 30px;
+	background-position: 0 0, 15px 15px;
+}
+
+/* 再叠加一半的棋盘，并移动背景 */
+div.checkerboard-step5 {
+	background: #eee;
+	background-image:
+		linear-gradient(45deg,  #bbb 25%, transparent 0),
+		linear-gradient(45deg, transparent 75%, #bbb 0),
+		linear-gradient(45deg,  #bbb 25%, transparent 0),
+		linear-gradient(45deg, transparent 75%, #bbb 0);
+	background-size: 30px 30px;
+	background-position: 0 0, 15px 15px, 15px 15px, 30px 30px;
+}
+
 div.checkerboard {
 	background: #eee;
 	background-image:
@@ -10,4 +58,14 @@ div.checkerboard {
 		linear-gradient(45deg, rgba(0, 0, 0, .25) 25%, transparent 0, transparent 75%, rgba(0, 0, 0, .25) 0);
 	background-size: 30px 30px;
 	background-position: 0 0, 15px 15px;
+}
+
+/* 将 SVG 文件以 data URI 文件的方式内嵌到样式表中 */
+div.checkerboard-SVG {
+	background: #eee url('data:image/svg+xml,\
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity=".25" >\
+            <rect x="50" width="50" height="50" />\
+            <rect y="50" width="50" height="50" />\
+            </svg>');
+	background-size: 30px 30px;	
 }
